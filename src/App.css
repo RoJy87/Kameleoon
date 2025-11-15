@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap');
+
+.App {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background-color: var(--bg, #f4f7f6);
+  color: var(--text, #333);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+}
+
+.App.dark {
+  --bg: #0b1220;
+  --text: #e6eef8;
+  --header-bg: #071126;
+  --controls-bg: #071126;
+  --input-bg: #0f1b2e;
+  --label-color: #b8c5d6;
+  --tooltip-bg: #292944;
+  --tooltip-border: #414163;
+}
+
+.App-header {
+  background-color: var(--header-bg, #282c34);
+  padding: 20px;
+  color: white;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chart-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  margin-bottom: 20px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.controls-left,
+.controls-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.control-select {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  padding: 6px 8px;
+  border: 1px solid var(--tooltip-border, #e1dfe7);
+  border-radius: 4px;
+  background-color: var(--input-bg, #fff);
+  color: var(--text, #1b1b23);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.control-select:hover {
+  border-color: #d1cfd9;
+}
+
+.control-select:focus {
+  outline: none;
+  border-color: #3838e7;
+  box-shadow: 0 0 0 3px rgba(56, 56, 231, 0.1);
+}
+
+h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.action-button {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border: 1px solid var(--tooltip-border, #e1dfe7);
+  border-radius: 4px;
+  background-color: var(--input-bg, #fff);
+  color: var(--text, #1b1b23);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.action-button:hover {
+  border-color: #d1cfd9;
+}
+
+.action-button:active {
+  transform: scale(0.98);
+}
+
+.theme-button {
+  background-color: var(--input-bg, #fff);
+  color: var(--text, #1b1b23);
+}
+
+.App.dark .theme-button {
+  background-color: #3838e7;
+  color: #fff;
+}
+
+.zoom-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.zoom-button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #3838e7;
+  border-radius: 4px;
+  background-color: var(--input-bg, #ffffff);
+  color: #3838e7;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.zoom-button:hover {
+  background-color: #3838e7;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+.zoom-button:active {
+  transform: scale(0.95);
+}
+
+.App.dark .zoom-button {
+  background-color: #0f1b2e;
+  border-color: #3838e7;
+  color: #3838e7;
+}
+
+@media (max-width: 768px) {
+  .chart-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

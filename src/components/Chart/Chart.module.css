@@ -1,0 +1,133 @@
+.chartContainer {
+  width: 100%;
+  height: 400px;
+  padding: 20px;
+  background-color: var(--bg, #ffffff);
+  transition: background-color 0.3s ease;
+}
+
+.panButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chartWrapper {
+  position: relative;
+}
+
+.chartWrapper:hover .panButton {
+  opacity: 1;
+}
+
+.panLeft {
+  left: 20px; /* Adjusted to be inside the chart area */
+}
+
+.panRight {
+  right: 20px; /* Adjusted to be inside the chart area */
+}
+
+.tooltipItemLabel {
+  flex: 1;
+  font-weight: 500;
+  color: var(--tooltip-text, #1b1b23);
+  text-align: left;
+}
+
+.customTooltip {
+  background-color: var(--tooltip-bg, #ffffff);
+  border: 1px solid var(--tooltip-border, #e1dfe7);
+  padding: 12px 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  font-family: 'Roboto', sans-serif;
+  min-width: 200px;
+}
+
+.label {
+  margin: 0 0 12px 0;
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--label-color, #52515b);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.label::before {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: #5e5d67;
+  border-radius: 2px;
+}
+
+.tooltipItem {
+  font-size: 13px;
+  margin: 6px 0;
+  line-height: 1.5;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  padding: 2px 0;
+}
+
+.tooltipItemLabel {
+  flex: 1;
+  font-weight: 500;
+  color: var(--tooltip-text, #1b1b23);
+}
+
+.tooltipItemValue {
+  font-weight: 600;
+  color: var(--tooltip-text, #1b1b23);
+  min-width: 50px;
+  text-align: right;
+}
+
+.trophy {
+  margin-left: 4px;
+  font-size: 14px;
+}
+
+/* Dark theme overrides when parent has .dark */
+:global(.dark) .chartContainer {
+  background-color: #0b1220;
+}
+
+:global(.dark) .chartContainer :global(text) {
+  fill: #e6eef8;
+}
+
+:global(.dark) .chartContainer :global(.recharts-text) {
+  fill: #e6eef8;
+}
+
+:global(.dark) .chartContainer :global(.recharts-cartesian-axis-tick) {
+  fill: #e6eef8;
+}
+
+:global(.dark) .customTooltip {
+  --tooltip-bg: #292944;
+  --tooltip-border: #414163;
+  --tooltip-text: #fcfcfd;
+  color: #fcfcfd;
+  --label-color: #c7c5d0;
+}
